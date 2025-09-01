@@ -9,7 +9,7 @@ use Lloricode\LaravelPaymaya\Facades\PaymayaFacade;
 use Lloricode\Paymaya\DataTransferObjects\Webhook\WebhookDto;
 use Symfony\Component\Console\Attribute\AsCommand;
 
-#[AsCommand(name: 'paymaya-sdk:webhook:all', description: 'Get all webhooks')]
+#[AsCommand(name: 'maya:webhook:all', description: 'Get all webhooks')]
 class GetAllWebhookCommand extends Command
 {
     public function handle(): int

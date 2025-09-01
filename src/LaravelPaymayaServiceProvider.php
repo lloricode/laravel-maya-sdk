@@ -19,7 +19,7 @@ class LaravelPaymayaServiceProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('laravel-paymaya-sdk')
+            ->name('laravel-maya-sdk')
             ->hasConfigFile()
             ->hasCommands(
                 [
@@ -37,9 +37,9 @@ class LaravelPaymayaServiceProvider extends PackageServiceProvider
         $this->app->singleton(
             Paymaya::class,
             fn () => new Paymaya(
-                environment: Environment::from(config()->string('paymaya-sdk.mode')),
-                secretKey: config()->string('paymaya-sdk.keys.secret'),
-                publicKey: config()->string('paymaya-sdk.keys.public'),
+                environment: Environment::from(config()->string('maya-sdk.mode')),
+                secretKey: config()->string('maya-sdk.keys.secret'),
+                publicKey: config()->string('maya-sdk.keys.public'),
             )
         );
     }

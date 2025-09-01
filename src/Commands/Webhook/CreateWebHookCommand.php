@@ -9,7 +9,7 @@ use Lloricode\LaravelPaymaya\Facades\PaymayaFacade;
 use Lloricode\Paymaya\DataTransferObjects\Webhook\WebhookDto;
 use Symfony\Component\Console\Attribute\AsCommand;
 
-#[AsCommand(name: 'paymaya-sdk:webhook:create', description: 'Create webhook')]
+#[AsCommand(name: 'maya:webhook:create', description: 'Create webhook')]
 class CreateWebHookCommand extends Command
 {
     public function handle(): int
@@ -32,7 +32,7 @@ class CreateWebHookCommand extends Command
             PaymayaFacade::deleteWebhook($id);
         }
 
-        foreach (config()->array('paymaya-sdk.webhooks') as $name => $url) {
+        foreach (config()->array('maya-sdk.webhooks') as $name => $url) {
             /** @var string $name */
             /** @var string $url */
             PaymayaFacade::createWebhook(

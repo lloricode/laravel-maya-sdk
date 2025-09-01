@@ -8,7 +8,7 @@ use Illuminate\Console\Command;
 use Lloricode\LaravelPaymaya\Facades\PaymayaFacade;
 use Symfony\Component\Console\Attribute\AsCommand;
 
-#[AsCommand(name: 'paymaya-sdk:customization:retrieve', description: 'Retrieve customization')]
+#[AsCommand(name: 'maya:customization:retrieve', description: 'Retrieve customization')]
 class RetrieveCustomizationCommand extends Command
 {
     public function handle(): int

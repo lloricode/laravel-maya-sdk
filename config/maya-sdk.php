@@ -20,9 +20,9 @@ return [
      * Webhooks
      */
     'webhooks' => [
-        Webhook::CHECKOUT_SUCCESS => 'api/payment-callback/paymaya/success',
-        Webhook::CHECKOUT_FAILURE => 'api/payment-callback/paymaya/failure',
-        Webhook::CHECKOUT_DROPOUT => 'api/payment-callback/paymaya/dropout',
+        Webhook::CHECKOUT_SUCCESS => 'api/payment-callback/maya/success',
+        Webhook::CHECKOUT_FAILURE => 'api/payment-callback/maya/failure',
+        Webhook::CHECKOUT_DROPOUT => 'api/payment-callback/maya/dropout',
 
         //        Webhook::PAYMENT_SUCCESS => 'api/test/success',
         //        Webhook::PAYMENT_EXPIRED => 'api/test/expired',
@@ -34,7 +34,7 @@ return [
             'logoUrl' => 'https://image1.png',
             'iconUrl' => 'https://image2.png',
             'appleTouchIconUrl' => 'https://image3.png',
-            'customTitle' => 'test paymaya sandbox title',
+            'customTitle' => 'test maya sandbox title',
             'colorScheme' => '#e01c44',
             'redirectTimer' => 3,
             //            'hideReceiptInput' => true,

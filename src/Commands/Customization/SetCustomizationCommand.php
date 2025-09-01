@@ -9,22 +9,22 @@ use Lloricode\LaravelPaymaya\Facades\PaymayaFacade;
 use Lloricode\Paymaya\DataTransferObjects\Checkout\Customization\CustomizationDto;
 use Symfony\Component\Console\Attribute\AsCommand;
 
-#[AsCommand(name: 'paymaya-sdk:customization:set', description: 'Set customization')]
+#[AsCommand(name: 'maya:customization:set', description: 'Set customization')]
 class SetCustomizationCommand extends Command
 {
     public function handle(): int
     {
         PaymayaFacade::createCustomization(
             new CustomizationDto(
-                logoUrl: config()->string('paymaya-sdk.checkout.customization.logoUrl'),
-                iconUrl: config()->string('paymaya-sdk.checkout.customization.iconUrl'),
-                appleTouchIconUrl: config()->string('paymaya-sdk.checkout.customization.appleTouchIconUrl'),
-                customTitle: config()->string('paymaya-sdk.checkout.customization.customTitle'),
-                colorScheme: config()->string('paymaya-sdk.checkout.customization.colorScheme'),
-                hideReceiptInput: config()->boolean('paymaya-sdk.checkout.customization.hideReceiptInput', false),
-                skipResultPage: config()->boolean('paymaya-sdk.checkout.customization.skipResultPage', false),
-                showMerchantName: config()->boolean('paymaya-sdk.checkout.customization.showMerchantName', true),
-                redirectTimer: config()->integer('paymaya-sdk.checkout.customization.redirectTimer', 30),
+                logoUrl: config()->string('maya-sdk.checkout.customization.logoUrl'),
+                iconUrl: config()->string('maya-sdk.checkout.customization.iconUrl'),
+                appleTouchIconUrl: config()->string('maya-sdk.checkout.customization.appleTouchIconUrl'),
+                customTitle: config()->string('maya-sdk.checkout.customization.customTitle'),
+                colorScheme: config()->string('maya-sdk.checkout.customization.colorScheme'),
+                hideReceiptInput: config()->boolean('maya-sdk.checkout.customization.hideReceiptInput', false),
+                skipResultPage: config()->boolean('maya-sdk.checkout.customization.skipResultPage', false),
+                showMerchantName: config()->boolean('maya-sdk.checkout.customization.showMerchantName', true),
+                redirectTimer: config()->integer('maya-sdk.checkout.customization.redirectTimer', 30),
             )
         );
 

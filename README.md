@@ -1,9 +1,9 @@
 # Paymaya SDK for Laravel
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/lloricode/laravel-paymaya-sdk.svg?style=flat-square)](https://packagist.org/packages/lloricode/laravel-paymaya-sdk)
-[![Tests](https://github.com/lloricode/laravel-paymaya-sdk/actions/workflows/run-tests.yml/badge.svg)](https://github.com/lloricode/laravel-paymaya-sdk/actions/workflows/run-tests.yml)
-[![Total Downloads](https://img.shields.io/packagist/dt/lloricode/laravel-paymaya-sdk.svg?style=flat-square)](https://packagist.org/packages/lloricode/laravel-paymaya-sdk)
-[![codecov](https://codecov.io/gh/lloricode/laravel-paymaya-sdk/branch/main/graph/badge.svg?token=JXRH9XB4BL)](https://codecov.io/gh/lloricode/laravel-paymaya-sdk)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/lloricode/laravel-maya-sdk.svg?style=flat-square)](https://packagist.org/packages/lloricode/laravel-maya-sdk)
+[![Tests](https://github.com/lloricode/laravel-maya-sdk/actions/workflows/run-tests.yml/badge.svg)](https://github.com/lloricode/laravel-maya-sdk/actions/workflows/run-tests.yml)
+[![Total Downloads](https://img.shields.io/packagist/dt/lloricode/laravel-maya-sdk.svg?style=flat-square)](https://packagist.org/packages/lloricode/laravel-maya-sdk)
+[![codecov](https://codecov.io/gh/lloricode/laravel-maya-sdk/branch/main/graph/badge.svg?token=JXRH9XB4BL)](https://codecov.io/gh/lloricode/laravel-maya-sdk)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate?hosted_button_id=V8PYXUNG6QP44)
 
 
@@ -28,7 +28,7 @@ composer require lloricode/laravel-maya-sdk
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --provider="Lloricode\LaravelPaymaya\LaravelPaymayaServiceProvider" --tag="paymaya-sdk-config"
+php artisan vendor:publish --provider="Lloricode\LaravelPaymaya\LaravelPaymayaServiceProvider" --tag="maya-sdk-config"
 ```
 
 This is the contents of the published config file:
@@ -56,9 +56,9 @@ return [
      * Webhooks
      */
     'webhooks' => [
-        Webhook::CHECKOUT_SUCCESS => 'api/payment-callback/paymaya/success',
-        Webhook::CHECKOUT_FAILURE => 'api/payment-callback/paymaya/failure',
-        Webhook::CHECKOUT_DROPOUT => 'api/payment-callback/paymaya/dropout',
+        Webhook::CHECKOUT_SUCCESS => 'api/payment-callback/maya/success',
+        Webhook::CHECKOUT_FAILURE => 'api/payment-callback/maya/failure',
+        Webhook::CHECKOUT_DROPOUT => 'api/payment-callback/maya/dropout',
 
         //        Webhook::PAYMENT_SUCCESS => 'api/test/success',
         //        Webhook::PAYMENT_EXPIRED => 'api/test/expired',
@@ -70,7 +70,7 @@ return [
             'logoUrl' => 'https://image1.png',
             'iconUrl' => 'https://image2.png',
             'appleTouchIconUrl' => 'https://image3.png',
-            'customTitle' => 'test paymaya sandbox title',
+            'customTitle' => 'test maya sandbox title',
             'colorScheme' => '#e01c44',
             'redirectTimer' => 3,
             //            'hideReceiptInput' => true,
@@ -201,15 +201,15 @@ PaymayaFacade::getCheckout($checkoutResponse->checkoutId);
 ### Webhook
 https://developers.maya.ph/reference/createv1webhook-1
 ```
-# see config `paymaya-sdk.webhooks` array to set your webhooks,
+# see config `maya.webhooks` array to set your webhooks,
 # then run this to create webhooks.
 
-php artisan paymaya-sdk:webhook:create
+php artisan maya:webhook:create
 
 
 # get all webhooks
 
-php artisan paymaya-sdk:webhook:all
+php artisan maya:webhook:all
 
 
 # retrieve output
@@ -239,8 +239,8 @@ https://docs.saloon.dev/the-basics/testing
      */
     public function success_checkout() 
     {
-            $paymayaID = 'test-paymaya-generated-id';
-            $paymayaRedirectUrl = 'http://test-paymaya/redirect-url';
+            $paymayaID = 'test-maya-generated-id';
+            $paymayaRedirectUrl = 'http://test-maya/redirect-url';
     
             MockClient::global([
                 CreateCheckoutRequest::class => new MockResponse(

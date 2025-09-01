@@ -8,7 +8,7 @@ use Illuminate\Console\Command;
 use Lloricode\LaravelPaymaya\Facades\PaymayaFacade;
 use Symfony\Component\Console\Attribute\AsCommand;
 
-#[AsCommand(name: 'paymaya-sdk:customization:remove', description: 'Remove customization')]
+#[AsCommand(name: 'maya:customization:remove', description: 'Remove customization')]
 class RemoveCustomizationCommand extends Command
 {
     public function handle(): int
