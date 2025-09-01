@@ -22,7 +22,7 @@ Paymaya SDK for laravel, it uses [lloricode/paymaya-sdk-php](https://github.com/
 You can install the package via composer:
 
 ```bash
-composer require lloricode/laravel-paymaya-sdk
+composer require lloricode/laravel-maya-sdk
 ```
 
 You can publish the config file with:
