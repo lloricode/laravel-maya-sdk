@@ -1,4 +1,4 @@
-# Paymaya SDK for Laravel
+# Maya SDK for Laravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/lloricode/laravel-maya-sdk.svg?style=flat-square)](https://packagist.org/packages/lloricode/laravel-maya-sdk)
 [![Tests](https://github.com/lloricode/laravel-maya-sdk/actions/workflows/run-tests.yml/badge.svg)](https://github.com/lloricode/laravel-maya-sdk/actions/workflows/run-tests.yml)
@@ -9,7 +9,7 @@
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/D1D71HJZD)
 
-Paymaya SDK for laravel, it uses [lloricode/paymaya-sdk-php](https://github.com/lloricode/paymaya-sdk-php).
+Maya SDK for laravel, it uses [lloricode/paymaya-sdk-php](https://github.com/lloricode/paymaya-sdk-php).
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -46,10 +46,10 @@ use Lloricode\Paymaya\Enums\Webhook;
  */
 
 return [
-    'mode' => env('PAYMAYA_MODE', Environment::Sandbox->value),
+    'mode' => env('MAYA_MODE', Environment::Sandbox->value),
     'keys' => [
-        'public' => env('PAYMAYA_PUBLIC_KEY'),
-        'secret' => env('PAYMAYA_SECRET_KEY'),
+        'public' => env('MAYA_PUBLIC_KEY'),
+        'secret' => env('MAYA_SECRET_KEY'),
     ],
 
     /**
